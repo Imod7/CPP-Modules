@@ -1,45 +1,46 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         ::::::::             #
-#    Makefile                                           :+:    :+:             #
-#                                                      +:+                     #
-#    By: dsaripap <dsaripap@student.codam.nl>         +#+                      #
-#                                                    +#+                       #
-#    Created: 2021/10/01 14:28:18 by dsaripap      #+#    #+#                  #
-#    Updated: 2021/10/01 16:53:29 by dsaripap      ########   odam.nl          #
-#                                                                              #
-# **************************************************************************** #
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   megaphone.cpp                                      :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: dsaripap <dsaripap@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2021/10/01 18:06:49 by dsaripap      #+#    #+#                 */
+/*   Updated: 2021/10/01 18:20:27 by dsaripap      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
 
-NAME = megaphone
-CC = clang++ 
-CFLAGS = -Wall -Wextra -Werror -g
+#include <iostream>
 
-RED=\033[0;31m
-GREEN=\033[0;32m
-CYAN=\033[0;36m
-NC=\033[0m # No Color
+int		ft_toupper(int c)
+{
+	if (c >= 97 && c <= 122)
+		return (c - 32);
+	return (c);
+}
 
-SRC = \
-	megaphone.cpp
+int main(int argc, char **argv)
+{
+	int j;
 
-OBJ = $(SRC:%.cpp=%.o)
+	if (argc == 1) {
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
+	}
 
-all: $(NAME)
+	j = 1;
+	while (j < argc) {
+		int i;
 
-$(NAME): $(OBJ)
-	@echo "${GREEN} [ + ] ${NC}Creating executable"
-	@$(CC) $(FLAGS) $(OBJ) -o $(NAME)
+		i = 0;
+		while (argv[j][i] != 0) {
+			argv[j][i] = ft_toupper(argv[j][i]);
+			std::cout << argv[j][i];
+			i++;
+		}
+		j++;
+	}
+	
+	std::cout << std::endl;
+	return 0;
 
-%.o: %.cpp
-	@echo "${GREEN} [ + ] ${NC}Creating all object files"
-	@$(CC) $(CFLAGS) -o $@ -c $<
-
-clean:
-	@echo "${RED} [ - ] ${NC}Deleting all object files"
-	@rm -rf $(OBJ)
-
-fclean: clean
-	@echo "${RED} [ - ] ${NC}Deleting executable"
-	@rm -rf $(NAME)
-
-re: fclean all
+}
