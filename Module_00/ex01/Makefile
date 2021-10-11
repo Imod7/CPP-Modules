@@ -6,7 +6,7 @@
 #    By: dsaripap <dsaripap@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/10/02 16:27:21 by dsaripap      #+#    #+#                  #
-#    Updated: 2021/10/09 15:11:08 by dsaripap      ########   odam.nl          #
+#    Updated: 2021/10/11 20:35:33 by dsaripap      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ NC=\033[0m # No Color
 SRC = \
 	main.cpp \
 	Phonebook.class.cpp \
+	Contact.class.cpp \
 
 OBJ = $(SRC:%.cpp=%.o)
 

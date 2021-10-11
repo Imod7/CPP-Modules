@@ -6,7 +6,7 @@
 /*   By: dsaripap <dsaripap@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/02 16:27:13 by dsaripap      #+#    #+#                 */
-/*   Updated: 2021/10/09 15:04:24 by dsaripap      ########   odam.nl         */
+/*   Updated: 2021/10/11 08:14:46 by dsaripap      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,5 @@ int main( void )
 {
     Phonebook obj;
 
-    std::string command;
-    std::cout << "Please enter your input : ";
-    std::cin >> command;
-
-    obj.command_handler(command);
     return 0;
 }
