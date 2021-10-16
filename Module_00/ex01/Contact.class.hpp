@@ -6,7 +6,7 @@
 /*   By: dsaripap <dsaripap@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 16:48:03 by dsaripap      #+#    #+#                 */
-/*   Updated: 2021/10/11 21:53:34 by dsaripap      ########   odam.nl         */
+/*   Updated: 2021/10/16 20:45:29 by dsaripap      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,25 +26,30 @@ private:
     std::string     darkest_secret;
 
 public:
-    void        set_first_name( std::string str );
-    std::string get_first_name( void );
+    void            set_first_name(std::string str);
+    std::string     get_first_name(void );
 
-    void        set_last_name( std::string str );
-    std::string get_last_name( void );
+    void            set_last_name(std::string str);
+    std::string     get_last_name(void );
 
-    void        set_nickname( std::string str );
-    std::string get_nickname( void );
+    void            set_nickname(std::string str);
+    std::string     get_nickname(void );
 
-    void        set_phone_number( std::string str );
-    std::string get_phone_number( void );
+    void            set_phone_number(std::string str);
+    std::string     get_phone_number(void);
 
-    void        set_darkest_secret( std::string str );
-    std::string get_darkest_secret( void );
+    void            set_darkest_secret(std::string str);
+    std::string     get_darkest_secret(void);
 
-    Contact     Add( void );
-    void        Search( Contact contact_obj, unsigned int index );
+    Contact         add_contact( void );
+    void            check_requested_contact(long index);
+    bool            check_if_contact_exists(void);
 
-    void        format_output( std::string text );
+    static void     print_contact_header(void);
+    void            print_contact_preview(size_t index);
+    void            print_contact_details(void);
+
+    static void     format_output(std::string text);
 
 };
 

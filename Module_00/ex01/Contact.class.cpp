@@ -6,12 +6,12 @@
 /*   By: dsaripap <dsaripap@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 16:49:28 by dsaripap      #+#    #+#                 */
-/*   Updated: 2021/10/11 22:33:18 by dsaripap      ########   odam.nl         */
+/*   Updated: 2021/10/16 20:55:34 by dsaripap      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iomanip>
 #include "Contact.class.hpp"
+#include "Format.hpp"
 
 void    Contact::set_first_name( std::string str ) {
     this->first_name = str;
@@ -53,7 +53,7 @@ std::string     Contact::get_darkest_secret( void ) {
     return this->darkest_secret;
 }
 
-Contact    Contact::Add( void ) {
+Contact    Contact::add_contact( void ) {
 
     std::string input;
     Contact     obj;
@@ -82,9 +82,19 @@ Contact    Contact::Add( void ) {
 
 }
 
-void    Contact::Search( Contact contact_obj, unsigned int index ) {
+void    Contact::format_output( std::string str ) {
+    if (str.length() > 10) {
+        std::cout << std::setw(11) << std::right;
+        std::cout << str.substr(0, 9) + ".|";
+    } 
+    else {
+        std::cout << std::setw(11) << std::right;
+        std::cout << str.substr(0, 10) + "|";
+    }
 
-    std::cout << "SEARCH command called" << std::endl;
+}
+
+void    Contact::print_contact_header( void ) {
 
     std::cout << std::setw(11) << std::right;
     std::cout << "index|";
@@ -98,30 +108,69 @@ void    Contact::Search( Contact contact_obj, unsigned int index ) {
     std::cout << std::setw(11) << std::right;
     std::cout << "nickname|" << std::endl;
 
+}
+
+void    Contact::print_contact_preview(size_t index) {
+
     std::cout << std::setw(10) << std::right;
-    std::cout << index;
 
-    std::cout << std::setw(1) << std::right;
-    std::cout << "|";
-
-    this->format_output( contact_obj.get_first_name() );
-    this->format_output( contact_obj.get_last_name() );
-    this->format_output( contact_obj.get_nickname() );
+    std::cout << index << "|";
+    format_output(this->get_first_name());
+    format_output(this->get_last_name());
+    format_output(this->get_nickname());
 
     std::cout << std::endl;
 
-    return; 
+}
+
+void    Contact::print_contact_details() {
+
+    std::cout << std::setw(10) << std::right;
+
+    std::cout << "First name: ";
+    std::cout << this->get_first_name();
+    std::cout << std::endl;
+
+    std::cout << "Last name: ";
+    std::cout << this->get_last_name();
+    std::cout << std::endl;
+
+    std::cout << "Nickname: ";
+    std::cout << this->get_nickname();
+    std::cout << std::endl;
+
+    std::cout << "Phone number: ";
+    std::cout << this->get_phone_number();
+    std::cout << std::endl;
+
+    std::cout << "Darkest secret: ";
+    std::cout << this->get_darkest_secret();
+    std::cout << std::endl;
 
 }
 
-void    Contact::format_output( std::string str ) {
-    if (str.length() > 10) {
-        std::cout << std::setw(11) << std::right;
-        std::cout << str.substr(0, 9) + ".|";
-    } 
-    else {
-        std::cout << std::setw(11) << std::right;
-        std::cout << str.substr(0, 10) + "|";
-    }
+void    Contact::check_requested_contact(long index) {
 
+    if (index < 0 or index > 7) {
+        std::cout << BOLDRED << "The requested index is out of bound!" << RESET << std::endl;
+        std::cout << "Please choose an index between 0 and 7!" << std::endl;
+    }
+    else if ((!(index < 0 or index > 7)) and (this->check_if_contact_exists() == true))
+        this->print_contact_details();
+    else if (this->check_if_contact_exists() == false)
+        std::cout << BOLDRED << "No Contact exists in this index!" << RESET << std::endl;
+    else
+        std::cout << BOLDRED << "Choose a valid index!" << RESET << std::endl;
+}
+
+bool    Contact::check_if_contact_exists() {
+    
+    bool exists = false;
+
+    if ((this->get_first_name() != "") or 
+    (this->get_last_name() != "") or 
+    (this->get_nickname() != ""))
+        exists = true;
+
+    return exists;
 }
