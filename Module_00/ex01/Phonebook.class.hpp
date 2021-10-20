@@ -6,7 +6,7 @@
 /*   By: dsaripap <dsaripap@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/06 14:46:40 by dsaripap      #+#    #+#                 */
-/*   Updated: 2021/10/16 20:43:37 by dsaripap      ########   odam.nl         */
+/*   Updated: 2021/10/17 23:42:58 by dsaripap      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,12 @@ public:
 
     void            menu(void);
     void            add(void);
-    void            search(void);
+    int             search(void);
 
     bool            check_if_phonebook_is_empty(void);
     int             prgm_exit(void);
 
-    bool            check_is_unsigned_long( std::string str );
+    int             check_if_index_is_valid(std::string str);
 
 };
 

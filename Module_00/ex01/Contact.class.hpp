@@ -6,7 +6,7 @@
 /*   By: dsaripap <dsaripap@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 16:48:03 by dsaripap      #+#    #+#                 */
-/*   Updated: 2021/10/16 20:45:29 by dsaripap      ########   odam.nl         */
+/*   Updated: 2021/10/20 16:15:28 by dsaripap      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ public:
     std::string     get_darkest_secret(void);
 
     Contact         add_contact( void );
-    void            check_requested_contact(long index);
+    void            check_requested_contact(long index, unsigned int arr_length);
     bool            check_if_contact_exists(void);
 
     static void     print_contact_header(void);
