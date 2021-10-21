@@ -6,7 +6,7 @@
 #    By: dsaripap <dsaripap@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/10/02 16:27:21 by dsaripap      #+#    #+#                  #
-#    Updated: 2021/10/15 01:55:46 by dsaripap      ########   odam.nl          #
+#    Updated: 2021/10/21 14:40:18 by dsaripap      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,11 +28,11 @@ OBJ = $(SRC:%.cpp=%.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
+	@echo "${GREEN} [ + ] ${NC}Creating all object files"
 	@echo "${GREEN} [ + ] ${NC}Creating executable"
 	@$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 
 %.o: %.cpp
-	@echo "${GREEN} [ + ] ${NC}Creating all object files"
 	@$(CC) $(CFLAGS) -o $@ -c $<
 
 .PHONY: clean
