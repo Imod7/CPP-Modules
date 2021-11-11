@@ -6,11 +6,11 @@
 #    By: dsaripap <dsaripap@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/10/02 16:27:21 by dsaripap      #+#    #+#                  #
-#    Updated: 2021/10/20 16:06:08 by dsaripap      ########   odam.nl          #
+#    Updated: 2021/11/10 18:42:16 by dsaripap      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = outer_galaxian_phonebook
+NAME = outer_galactic_phonebook
 CC = clang++ 
 CFLAGS = -Wall -Wextra -Werror -g -std=c++98
 

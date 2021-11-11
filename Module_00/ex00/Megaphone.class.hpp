@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Format.hpp                                         :+:    :+:            */
+/*   Megaphone.class.hpp                                :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: dsaripap <dsaripap@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/10/16 20:17:31 by dsaripap      #+#    #+#                 */
-/*   Updated: 2021/10/21 18:48:40 by dsaripap      ########   odam.nl         */
+/*   Created: 2021/11/10 19:29:58 by dsaripap      #+#    #+#                 */
+/*   Updated: 2021/11/11 22:06:40 by dsaripap      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORMAT_HPP
-# define FORMAT_HPP
+#ifndef MEGAPHONE_CLASS_HPP
+# define MEGAPHONE_CLASS_HPP
 
-#include <iomanip>
+#include <iostream>
+#include <string>
 
-// Define colors to print colored text on terminal
-#define RESET   "\033[0m"
-#define RED     "\033[31m"      /* Red */
-#define BOLDGREEN   "\033[1m\033[32m"      /* Bold Green */
-#define BOLDCYAN    "\033[1m\033[36m"      /* Bold Cyan */
-#define BOLDRED     "\033[1m\033[31m"      /* Bold Red */
+class Megaphone {
+ public:
+  static int  ft_toupper(int c);
+  Megaphone(int argc, char **argv);
+};
 
 #endif
