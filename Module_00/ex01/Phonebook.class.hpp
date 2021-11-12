@@ -6,7 +6,7 @@
 /*   By: dsaripap <dsaripap@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/06 14:46:40 by dsaripap      #+#    #+#                 */
-/*   Updated: 2021/11/11 15:36:59 by dsaripap      ########   odam.nl         */
+/*   Updated: 2021/11/12 16:51:22 by dsaripap      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <string>
+#include <sstream>
 #include "Contact.class.hpp"
 
 #define ARRAY_MAX 8
@@ -33,7 +34,6 @@ class Phonebook {
   int             search(void);
   bool            check_if_phonebook_is_empty(void);
   int             prgm_exit(void);
-  int             check_if_index_is_valid(std::string str);
 };
 
 #endif
