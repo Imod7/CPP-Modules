@@ -6,7 +6,7 @@
 /*   By: dsaripap <dsaripap@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 16:49:28 by dsaripap      #+#    #+#                 */
-/*   Updated: 2021/11/12 17:05:17 by dsaripap      ########   odam.nl         */
+/*   Updated: 2021/11/14 18:13:40 by dsaripap      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -160,24 +160,7 @@ void        Contact::check_requested_contact(long int index,
     std::cout << RESET << std::endl;
     std::cout << BOLDCYAN << "Please choose an index between 0 and ";
     std::cout << arr_length - 1 << "!" RESET << std::endl;
-  } else if ((!(index < 0 || index > 7)) &&
-  (this->check_if_contact_exists() == true)) {
-    this->print_contact_details();
-  } else if (this->check_if_contact_exists() == false) {
-    std::cout << BOLDRED << "No Contact exists in this index!";
-    std::cout << RESET << std::endl;
   } else {
-    std::cout << BOLDRED << "Choose a valid index!" << RESET << std::endl;
+    this->print_contact_details();
   }
-}
-
-bool                Contact::check_if_contact_exists() {
-  bool exists = false;
-
-  if ((this->get_first_name() != "") ||
-  (this->get_last_name() != "") ||
-  (this->get_nickname() != ""))
-    exists = true;
-
-  return exists;
 }

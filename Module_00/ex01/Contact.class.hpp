@@ -6,7 +6,7 @@
 /*   By: dsaripap <dsaripap@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/11 16:48:03 by dsaripap      #+#    #+#                 */
-/*   Updated: 2021/11/12 17:09:20 by dsaripap      ########   odam.nl         */
+/*   Updated: 2021/11/14 18:02:03 by dsaripap      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ class Contact {
   Contact      add_contact(void);
   void         check_requested_contact(long index,
                                        unsigned int arr_length);
-  bool         check_if_contact_exists(void);
+  bool         check_if_contact_not_empty(void);
 
   static void  print_contact_header(void);
   void         print_contact_preview(size_t index);
