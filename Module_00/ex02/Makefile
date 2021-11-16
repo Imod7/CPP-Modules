@@ -6,13 +6,13 @@
 #    By: dsaripap <dsaripap@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/10/02 16:27:21 by dsaripap      #+#    #+#                  #
-#    Updated: 2021/10/21 14:40:18 by dsaripap      ########   odam.nl          #
+#    Updated: 2021/11/16 18:04:31 by dsaripap      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = account
-CC = clang++ 
-CFLAGS = -Wall -Wextra -Werror -g -std=c++98
+CC = clang++
+CFLAGS = -Wall -Wextra -Werror -g -std=c++98 -pedantic
 
 RED=\033[0;31m
 GREEN=\033[0;32m

@@ -6,7 +6,7 @@
 /*   By: dsaripap <dsaripap@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/10 19:29:21 by dsaripap      #+#    #+#                 */
-/*   Updated: 2021/11/11 22:05:18 by dsaripap      ########   odam.nl         */
+/*   Updated: 2021/11/14 16:47:24 by dsaripap      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,14 @@ int Megaphone::ft_toupper(int c) {
 }
 
 Megaphone::Megaphone(int argc, char **argv) {
+  int i;
   int j;
-
 
   if (argc == 1) {
     std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
   } else {
     j = 1;
     while (j < argc) {
-      int i;
-
       i = 0;
       while (argv[j][i] != 0) {
         argv[j][i] = Megaphone::ft_toupper(argv[j][i]);

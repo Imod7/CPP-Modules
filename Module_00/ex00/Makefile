@@ -6,13 +6,13 @@
 #    By: dsaripap <dsaripap@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/10/01 14:28:18 by dsaripap      #+#    #+#                  #
-#    Updated: 2021/11/10 20:03:03 by dsaripap      ########   odam.nl          #
+#    Updated: 2021/11/16 18:04:34 by dsaripap      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = megaphone
 CC = clang++ 
-CFLAGS = -Wall -Wextra -Werror -g -std=c++98
+CFLAGS = -Wall -Wextra -Werror -g -std=c++98 -pedantic
 
 RED=\033[0;31m
 GREEN=\033[0;32m
@@ -28,11 +28,11 @@ OBJ = $(SRC:%.cpp=%.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
+	@echo "${GREEN} [ + ] ${NC}Creating all object files"
 	@echo "${GREEN} [ + ] ${NC}Creating executable"
 	@$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 
 %.o: %.cpp
-	@echo "${GREEN} [ + ] ${NC}Creating all object files"
 	@$(CC) $(CFLAGS) -o $@ -c $<
 
 .PHONY: clean

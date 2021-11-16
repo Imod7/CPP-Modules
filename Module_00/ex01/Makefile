@@ -6,13 +6,13 @@
 #    By: dsaripap <dsaripap@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/10/02 16:27:21 by dsaripap      #+#    #+#                  #
-#    Updated: 2021/11/10 18:42:16 by dsaripap      ########   odam.nl          #
+#    Updated: 2021/11/16 18:04:22 by dsaripap      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = outer_galactic_phonebook
 CC = clang++ 
-CFLAGS = -Wall -Wextra -Werror -g -std=c++98
+CFLAGS = -Wall -Wextra -Werror -g -std=c++98 -pedantic
 
 RED=\033[0;31m
 GREEN=\033[0;32m
