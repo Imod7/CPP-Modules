@@ -6,7 +6,7 @@
 /*   By: dsaripap <dsaripap@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/10 19:29:21 by dsaripap      #+#    #+#                 */
-/*   Updated: 2021/11/14 16:47:24 by dsaripap      ########   odam.nl         */
+/*   Updated: 2021/11/18 13:56:26 by dsaripap      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,24 +18,53 @@ int Megaphone::ft_toupper(int c) {
   return (c);
 }
 
+int Megaphone::individual_arg_is_spaces(char *argv) {
+  int i;
+
+  i = 0;
+  while (argv[i] != 0) {
+      if (std::isspace(argv[i]) == 0)
+        return (0);
+      i++;
+    }
+  return (1);
+}
+
+int Megaphone::all_args_are_spaces(char **argv) {
+  int i;
+
+  i = 1;
+  while (argv[i] != 0) {
+    if (individual_arg_is_spaces(argv[i]) == 0) {
+      return (0);
+    }
+    i++;
+  }
+  return (1);
+}
+
 Megaphone::Megaphone(int argc, char **argv) {
   int i;
   int j;
 
-  if (argc == 1) {
+  if ((argc == 1) || (strcmp(argv[1], "") == 0) ||
+  all_args_are_spaces(argv) == 1) {
     std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
   } else {
-    j = 1;
-    while (j < argc) {
-      i = 0;
-      while (argv[j][i] != 0) {
-        argv[j][i] = Megaphone::ft_toupper(argv[j][i]);
-        std::cout << argv[j][i];
+    i = 1;
+    while (i < argc) {
+      if (individual_arg_is_spaces(argv[i]) == 1) {
+        i++;
+      } else {
+        j = 0;
+        while (argv[i][j] != 0) {
+          argv[i][j] = Megaphone::ft_toupper(argv[i][j]);
+          std::cout << argv[i][j];
+          j++;
+        }
         i++;
       }
-      j++;
     }
   }
-
   std::cout << std::endl;
 }

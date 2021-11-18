@@ -6,11 +6,11 @@
 #    By: dsaripap <dsaripap@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/10/02 16:27:21 by dsaripap      #+#    #+#                  #
-#    Updated: 2021/11/16 18:04:31 by dsaripap      ########   odam.nl          #
+#    Updated: 2021/11/18 15:29:41 by dsaripap      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = account
+NAME = account_tests
 CC = clang++
 CFLAGS = -Wall -Wextra -Werror -g -std=c++98 -pedantic
 
