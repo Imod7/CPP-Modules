@@ -6,7 +6,7 @@
 #    By: dsaripap <dsaripap@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/10/01 14:28:18 by dsaripap      #+#    #+#                  #
-#    Updated: 2021/11/16 18:04:34 by dsaripap      ########   odam.nl          #
+#    Updated: 2021/11/19 16:19:13 by dsaripap      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ CYAN=\033[0;36m
 NC=\033[0m # No Color
 
 SRC = \
-	megaphone.cpp \
+	main.cpp \
 	Megaphone.class.cpp \
 
 OBJ = $(SRC:%.cpp=%.o)
